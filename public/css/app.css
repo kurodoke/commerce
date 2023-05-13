@@ -116,3 +116,8 @@
     width: max-content;
     border-radius: 0;
 }
+
+.cart-img{
+    width: 150px;
+    height: auto;
+}

@@ -17,8 +17,19 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::get('/cart', function () {
+    return view('cart');
+});
+
 Route::get('/product/{id}', function($id) {
     return view('product', [
         "id" => $id
     ]);
+});
+
+Route::get('/addcart?quantity={quantity}&id={id}&price={price}', function($quantity, $id, $price){
+    return view('cart', [
+        "quantity" => $quantity, 
+        "id" => $id, 
+        "price" => $price]);
 });

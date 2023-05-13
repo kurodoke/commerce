@@ -16,7 +16,7 @@
             
             <a class="navbar-brand text-font-sb" href="/"><img src="{{URL::asset('image/logo.png')}}" class="logo-img" alt=""></a>
 
-            <a class="navbar-brand" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="navbar-brand" href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </nav>
     {{-- navbar --}}

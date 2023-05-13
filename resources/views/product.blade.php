@@ -2,7 +2,7 @@
 
 
 @section('container')
-<form action="/cart" method="get">
+<form action="/addcart" method="get">
     <div class="container-fluid base m-0 position-relative">
         <div class="row">
             <div class="col-8 content-product d-flex justify-content-center">
@@ -21,7 +21,7 @@
                     </div>
                     <div class="quantity me-4 mb-5">
                         <label for="quantity" class="text-font-sb">Quantity</label>
-                        <input type="number" class="form-control text-font-l" name="quantity" id="quantity" min="1">
+                        <input type="number" class="form-control text-font-l" name="quantity" id="quantity" min="1" required>
                     </div>
                     <div class="cart-submit me-4">
                         <input type="text" name="id" value="1" hidden>
