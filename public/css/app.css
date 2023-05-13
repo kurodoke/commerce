@@ -21,6 +21,16 @@
     font-weight: 300;
 }
 
+.navbar{
+    height: 10vh;
+    width: auto;
+}
+
+.logo-img{
+    height: 50%;
+    width: 50%;
+}
+
 .hero-banner{
     background: rgb(219,219,219);
     background: linear-gradient(90deg, rgba(219,219,219,1) 0%, rgba(196,196,196,1) 35%, rgba(215,215,215,1) 100%);
@@ -77,4 +87,32 @@
     padding: 5px 10px 0px 10px;
     background-color: white;
     font-size: 1.1rem;
+}
+
+.content-product{
+    background-color: #7928ca;
+    height: 90vh;
+}
+
+.base{
+    background-color: white;
+}
+
+.a-half-top{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.font-big{
+    font-size: 2.2rem;
+}
+
+.font-semi-big{
+    font-size: 1.5rem;
+}
+
+.btn{
+    width: max-content;
+    border-radius: 0;
 }
