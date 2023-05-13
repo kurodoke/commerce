@@ -2,7 +2,7 @@
 
 
 @section('container')
-<form action="/addcart" method="get">
+<form action="/addcart" method="post">
     <div class="container-fluid base m-0 position-relative">
         <div class="row">
             <div class="col-8 content-product d-flex justify-content-center">

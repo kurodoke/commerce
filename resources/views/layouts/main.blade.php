@@ -17,7 +17,8 @@
             <a class="navbar-brand text-font-sb" href="/"><img src="{{URL::asset('image/logo.png')}}" class="logo-img" alt=""></a>
 
             <div class="right-navbar">
-                <a class="navbar-brand" href="/cart"><i class="fa-solid fa-cart-shopping" style="color: #171717;"></i></a>
+                <a class="navbar-brand" href="/shipping"><i class="fa-solid fa-truck-fast" style="color: #000000;"></i></a>
+                <a class="navbar-brand ms-4" href="/cart"><i class="fa-solid fa-cart-shopping" style="color: #171717;"></i></a>
                 <a class="navbar-brand ms-4" href="/login"><i class="fa-solid fa-user" style="color: #171717;"></i></a>
                 <a class="navbar-brand ms-4" href="/logout"><i class="fa-solid fa-user-slash" style="color: #000000;"></i></a>
             </div>

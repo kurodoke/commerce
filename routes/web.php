@@ -29,6 +29,10 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('/shipping', function () {
+    return view('shipping');
+});
+
 Route::get('/product/{id}', function($id) {
     return view('product', [
         "id" => $id
