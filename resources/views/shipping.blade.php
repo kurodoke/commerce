@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col position-relative"  style="background-color: #7928ca;">
                     <div class="d-flex">
-                        <h1>Headphone</h1>
+                        <h1>Shipping</h1>
                         <img src="{{ URL::asset('image/assets/hetset pon blutut.webp') }}" style="background-color: #7928ca;" alt="" class="position-absolute end-0 cart-img">
                     </div>
                 </div>
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col position-relative"  style="background-color: #7928ca;">
                     <div class="d-flex">
-                        <h1>Headphone</h1>
+                        <h1>Shipping</h1>
                         <img src="{{ URL::asset('image/assets/hetset pon blutut.webp') }}" style="background-color: #7928ca;" alt="" class="position-absolute end-0 cart-img">
                     </div>
                 </div>
