@@ -8,16 +8,16 @@
                     <div class="hero-container row">
                         <div class="col-6">
                             <div class="container hero-text">
-                                <h5 class="text-font-l m-0">Plimsolls MK.II</h5>
+                                <h5 class="text-font-l m-0">{{ $products->first()->name }}</h5>
                                 <h3 class="text-font-r m-0" style="font-size: 2rem">Flash Sale</h3>
                                 <h1 class="text-font-b m-0" style="font-size: 7rem; color: #ffffff">SUPERB</h1>
-                                <button type="button" class="btn btn-danger text-font-b">Shop Now</button>
+                                <a href="product/{{ $products->first()->id }}" class="btn btn-danger text-font-b">Shop Now</a>
                             </div>
                         </div>
                         <div class="col-6 d-flex justify-content-center">
-                            <img class="hero-image" src="{{ URL::asset('image/assets/hetset pon blutut.webp') }}" alt="">
+                            <img class="hero-image" src="{{ URL::asset('image/assets/' . $products->first()->image) }}" alt="">
                             <div class="hero-detail">
-                                <p class="text-font-b" style="font-size: 2rem; color: #a8a8a8"">Plimsolls MK.II</p>
+                                <p class="text-font-b" style="font-size: 2rem; color: #a8a8a8"">{{ $products->first()->name }}</p>
                             </div>
                         </div>
                     </div>
@@ -36,6 +36,9 @@
         <div class="row">
             <div class="col-2">
                 <h6 class="text-font-sb">Category</h6>
+                @foreach ($products as $user)
+                    <a class="text-decoration-none text-dark" href=""><p class="text-font-r m-0">Gaming</p></a>
+                @endforeach
                 <a class="text-decoration-none text-dark" href=""><p class="text-font-r m-0">Gaming</p></a>
                 <a class="text-decoration-none text-dark" href=""><p class="text-font-r m-0">Simple</p></a>
                 <a class="text-decoration-none text-dark" href=""><p class="text-font-r m-0">Speaker</p></a>

@@ -16,7 +16,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'Plimsols',
             'description' => 'Headphone yang buat pikiran kamu terbang ke angkasa (bukan mabok ya)',
-            'category' => 'Simple',
+            'category_id' => '1',
             'price' => '400',
             'stock' => '999',
             'image' => 'hetset pon blutut.webp'
@@ -25,7 +25,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'Glimsols',
             'description' => 'Hengset Geming yang bisa ngasih auto headshot di valorant (ini cit)',
-            'category' => 'Gaming',
+            'category_id' => '2',
             'price' => '700',
             'stock' => '999',
             'image' => 'hetset geming.webp'
@@ -34,7 +34,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'Bless EarBuds',
             'description' => "Ini Earbuds. karna kata 'Earbuds' itu keren, jadi kumahalin deh",
-            'category' => 'TWS',
+            'category_id' => '4',
             'price' => '1100',
             'stock' => '999',
             'image' => 'earset blutut.webp'
@@ -43,7 +43,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'Tpossr',
             'description' => 'Gak ngerti beda TWS sama Earbuds itu apaan, harga? TWS ku murahin deh',
-            'category' => 'TWS',
+            'category_id' => '4',
             'price' => '500',
             'stock' => '999',
             'image' => 'tws.webp'
@@ -52,7 +52,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'Speaker Neon',
             'description' => 'Speaker asik buat nonton Jedag Jedug sakit mata di tiktok',
-            'category' => 'Speaker',
+            'category_id' => '3',
             'price' => '500',
             'stock' => '999',
             'image' => 'tws.webp'
@@ -61,7 +61,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'YSS',
             'description' => 'Gak ngerti kenapa toko akustik jualan jam',
-            'category' => 'Etc.',
+            'category_id' => '5',
             'price' => '10',
             'stock' => '999',
             'image' => 'smartwatch.webp'
