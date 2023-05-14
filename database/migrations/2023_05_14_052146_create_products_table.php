@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('category', ['Gaming', 'Simple', 'Speaker', 'TWS', 'Etc.']);
             $table->integer('price');
             $table->integer('stock');
+            $table->string('image');
         });
     }
 
