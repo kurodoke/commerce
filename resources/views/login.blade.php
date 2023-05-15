@@ -21,9 +21,11 @@
         <title>Document</title>
     </head>
     <body>
+
         <div class="login-content d-flex justify-content-center align-items-center">
             <div class="content">
-                <form action="/procLogin" method="post" class="form_container">
+                <form action="/login" method="post" class="form_container">
+                    @csrf
                     <div class="title_container">
                         <p class="title">Login to your Account</p>
                         <span class="subtitle">
@@ -31,26 +33,39 @@
                             the experience.
                         </span>
                     </div>
-                    <br/>
+                    @if (session()->has('success'))
+                        <p class="m-0 p-0 success_feedback"><small>{{ session('success') }}</small></p>
+                    @endif
+
+                    @if (session()->has('failed'))
+                        <p class="m-0 p-0 invalid_feedback"><small>{{ session('failed') }}</small></p>
+                    @endif
                     <div class="input_container">
-                        <label class="input_label" for="email_field">Username</label>
+                        <label class="input_label" for="user_field">Username</label>
+                        @error('username')
+                            <p class="m-0 p-0 invalid_feedback"><small>{{ $message }}</small></p>
+                        @enderror
                         <i class="icon fa-solid fa-user" style="color: #000000;"></i>
                         <input
                             placeholder="Username"
                             name="username"
                             type="text"
-                            class="input_field"
-                            id="email_field"
+                            class="input_field @error('username') is_invalid @enderror"
+                            id="user_field"
+                            value="{{ old('username') }}"
                         />
                     </div>
                     <div class="input_container">
                         <label class="input_label" for="password_field">Password</label>
+                        @error('password')
+                            <p class="m-0 p-0 invalid_feedback"><small>{{ $message }}</small></p>
+                        @enderror
                         <i class="icon fa-solid fa-lock" style="color: #000000;"></i>
                         <input
                             placeholder="Password"
                             name="password"
                             type="password"
-                            class="input_field"
+                            class="input_field @error('password') is_invalid @enderror"
                             id="password_field"
                         />
                     </div>

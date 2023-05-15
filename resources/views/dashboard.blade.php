@@ -9,7 +9,7 @@
                         <div class="col-6">
                             <div class="container hero-text">
                                 <h5 class="text-font-l m-0">{{ $products->first()->name }}</h5>
-                                <h3 class="text-font-r m-0" style="font-size: 2rem">Flash Sale</h3>
+                                <h3 class="text-font-r m-0" style="font-size: 2rem">Best Selled</h3>
                                 <h1 class="text-font-b m-0" style="font-size: 7rem; color: #ffffff">SUPERB</h1>
                                 <a href="product/{{ $products->first()->id }}" class="btn btn-danger text-font-b">Shop Now</a>
                             </div>
@@ -31,60 +31,30 @@
     <div class="container">
         <div class="row d-flex product-header">
             <h4 class="text-center text-font-b">Product</h4>
-            <p class="text-center text-font-r">Non esse eiusmod irure aliqua nisi incididunt irure cupidatat veniam in est dolor officia.</p>
+            <p class="text-center text-font-r">All of the best product that sit in our storage</p>
         </div>
         <div class="row">
             <div class="col-2">
                 <h6 class="text-font-sb">Category</h6>
-                @foreach ($products as $user)
-                    <a class="text-decoration-none text-dark" href=""><p class="text-font-r m-0">Gaming</p></a>
+                @foreach ($categories as $category)
+                    <a class="text-decoration-none text-dark" href=""><p class="text-font-r m-0">{{ $category->name }}</p></a>
                 @endforeach
-                <a class="text-decoration-none text-dark" href=""><p class="text-font-r m-0">Gaming</p></a>
-                <a class="text-decoration-none text-dark" href=""><p class="text-font-r m-0">Simple</p></a>
-                <a class="text-decoration-none text-dark" href=""><p class="text-font-r m-0">Speaker</p></a>
-                <a class="text-decoration-none text-dark" href=""><p class="text-font-r m-0">TWS</p></a>
-                <a class="text-decoration-none text-dark" href=""><p class="text-font-r m-0">Etc.</p></a>
             </div>
             <div class="col-10">
                 <div class="row g-4">
-                    <div class="col-4">
-                        <a href="product/1" class="text-decoration-none text-dark">
-                            <div class="content d-flex justify-content-center align-items-center">
-                                <img class="content-img" src="{{ URL::asset('image/assets/hetset pon blutut.webp') }}" alt="">
-                                <div class="content-main">
-                                    <p class="content-text m-0 text-font-sb">Plimsolls MK.II</p>
-                                    <p class="m-0"><span class="text-font-r content-price">Rp400k</span></p>
+                    @foreach ($products as $product)
+                        <div class="col-4">
+                            <a href="product/{{ $product->id }}" class="text-decoration-none text-dark">
+                                <div class="content d-flex justify-content-center align-items-center">
+                                    <img class="content-img" src="{{ URL::asset('image/assets/' . $product->image) }}" alt="">
+                                    <div class="content-main">
+                                        <p class="content-text m-0 text-font-sb">{{ $product->name }}</p>
+                                        <p class="m-0"><span class="text-font-r content-price">Rp{{ $product->price }}k</span></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-4">
-                        <div class="content d-flex justify-content-center align-items-center">
-                            <img class="content-img" src="{{ URL::asset('image/assets/hetset pon blutut.webp') }}" alt="">
-                            <div class="content-main">
-                                <p class="content-text m-0 text-font-sb">Plimsolls MK.II</p>
-                                <p class="m-0"><span class="text-font-r content-price">Rp400k</span></p>
-                            </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="content d-flex justify-content-center align-items-center">
-                            <img class="content-img" src="{{ URL::asset('image/assets/hetset pon blutut.webp') }}" alt="">
-                            <div class="content-main">
-                                <p class="content-text m-0 text-font-sb">Plimsolls MK.II</p>
-                                <p class="m-0"><span class="text-font-r content-price">Rp400k</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="content d-flex justify-content-center align-items-center">
-                            <img class="content-img" src="{{ URL::asset('image/assets/hetset pon blutut.webp') }}" alt="">
-                            <div class="content-main">
-                                <p class="content-text m-0 text-font-sb">Plimsolls MK.II</p>
-                                <p class="m-0"><span class="text-font-r content-price">Rp400k</span></p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

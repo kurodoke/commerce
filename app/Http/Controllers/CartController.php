@@ -5,15 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Http\Requests\StoreCartRequest;
 use App\Http\Requests\UpdateCartRequest;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+    public function index(){
+        $subtotal = 0;
+        foreach (Cart::where('user_id', session('user_id'))->get() as $cart) {
+            $subtotal += $cart->product->price * $cart->quantity;
+        };
+        
+        return view('cart', [
+            'carts' => Cart::where('user_id', session('user_id'))->get(),
+            'subtotal' => $subtotal,
+            'total' => $subtotal + 50,
+            'user' => User::find(session('user_id'))
+        ]);
     }
 
     /**
@@ -59,8 +70,8 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cart $cart)
-    {
-        //
+    public function destroy(Request $request){
+        Cart::where('user_id', session('user_id'))->find($request->cart_id)->delete();
+        return redirect('/cart')->with('success', 'We deleted your cart');
     }
 }

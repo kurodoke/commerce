@@ -89,6 +89,12 @@
     font-size: 1.1rem;
 }
 
+.content-category{
+    padding: 5px 10px 10px 10px;
+    background-color: white;
+    font-size: 1.1rem;
+}
+
 .content-product{
     background-color: #7928ca;
     height: 90vh;
@@ -102,6 +108,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    margin: 0;
+    padding: 0;
 }
 
 .font-big{
@@ -194,4 +202,10 @@
 
 .textarea-scroll::-webkit-scrollbar {
     display: none;
-  }
+}
+
+.alert{
+    border: none;
+    border-radius: 0;
+    padding: .2rem;
+}

@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('user_id')->constrained(
                 table: 'users', indexName: 'order2user'
             );
@@ -23,7 +24,6 @@ return new class extends Migration
                 table: 'payments', indexName: 'order2payment'
             );
             $table->timestamps();
-            $table->primary(['user_id', 'product_id']);
         });
     }
 

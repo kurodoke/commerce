@@ -11,9 +11,10 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+    public function index(){
+        return view('shipping', [
+            'orders' => Order::where('user_id', session('user_id'))->get()
+        ]);
     }
 
     /**

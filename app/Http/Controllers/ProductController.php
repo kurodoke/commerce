@@ -5,15 +5,40 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\Cart;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+    public function index($id){
+        if (Product::find($id) == null){
+            return redirect('/');
+        }
+
+        return view('product', [
+            'product' => Product::find($id)
+        ]);
+    }
+
+    public function addcart(Request $request){
+        $cart = Cart::where('user_id', session('user_id'))->where('product_id', $request->id)->first();
+        if( $cart ) {
+            $cart->update([
+                'quantity' => $cart->quantity + $request->quantity
+            ]);
+            
+        } else {
+            Cart::create([
+                'user_id' => session('user_id'),
+                'product_id' => $request->id,
+                'quantity' => $request->quantity
+            ]);
+        }
+        return redirect('/cart')->with('success', 'We added an item on your cart');
     }
 
     /**

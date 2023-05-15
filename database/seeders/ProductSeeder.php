@@ -51,11 +51,11 @@ class ProductSeeder extends Seeder
 
         Product::create([
             'name' => 'Speaker Neon',
-            'description' => 'Speaker asik buat nonton Jedag Jedug sakit mata di tiktok',
+            'description' => 'Speaker asik buat nonton video Jedag Jedug sakit mata di tiktok',
             'category_id' => '3',
             'price' => '500',
             'stock' => '999',
-            'image' => 'tws.webp'
+            'image' => 'speaker.webp'
         ]);
 
         Product::create([
