@@ -20,6 +20,6 @@ class Order extends Model
     }
     
     public function payment(){
-        return $this->belongsTo(Payment::class, 'product_id');
+        return $this->belongsTo(Payment::class, 'payment_id');
     }
 }

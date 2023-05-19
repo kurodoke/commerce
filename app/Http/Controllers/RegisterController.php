@@ -16,12 +16,12 @@ class RegisterController extends Controller
             'username' => 'required|unique:users|min:4',
             'password' => 'required|min:4',
             'address' => 'required',
-            'phone' => 'required|min:11|numeric'
+            'phone_number' => 'required|numeric|min:11'
         ]);
 
         $validated['password'] = bcrypt($validated['password']);
 
-        User::create([$validated]);
+        User::create($validated);
 
         return redirect('/login')->with('success', 'Register Successful, go login now');
     }

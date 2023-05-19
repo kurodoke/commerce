@@ -78,17 +78,17 @@
                     </div>
                     <div class="input_container">
                         <label class="input_label" for="phone_field">Phone Number</label>
-                        @error('phone')
+                        @error('phone_number')
                             <p class="m-0 p-0 invalid_feedback"><small>{{ $message }}</small></p>
                         @enderror
                         <i class="icon fa-solid fa-phone" style="color: #000000;"></i>
                         <input
                             placeholder="Phone Number"
-                            name="phone"
+                            name="phone_number"
                             type="text"
-                            class="input_field @error('phone') is_invalid @enderror"
+                            class="input_field @error('phone_number') is_invalid @enderror"
                             id="phone_field"
-                            value="{{ old('phone') }}"
+                            value="{{ old('phone_number') }}"
                         />
                     </div>
                     <button title="Sign In" type="submit" class="sign-in_btn">
